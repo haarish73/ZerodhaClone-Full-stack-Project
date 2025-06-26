@@ -1,6 +1,6 @@
 import React from "react";
 import googlePlayBadge from "../../assets/img/images/googlePlayBadge.svg"; 
-import appStoreBadge from "../../assets/img/images/appStoreBadge.svg"
+import appStoreBadge from '../../assets/img/images/appstoreBadge.svg';
 function LeftSection({
   imageURL,
   productName,
