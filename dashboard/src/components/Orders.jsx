@@ -22,7 +22,7 @@ import "./Orders.css";
 
 const Orders = () => {
   const [orders, setOrders] = useState([]);
-  const API_BASE = "http://localhost:5000";
+  const API_BASE = " https://zerodhaclone-full-stack-project.onrender.com";
 
   useEffect(() => {
     fetchOrders();
