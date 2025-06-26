@@ -1,0 +1,319 @@
+/* Orders Component Styles */
+
+/* Orders Component Styles - Adjusted for existing layout */
+
+/* Container - Adjusted to work with existing navbar/sidebar */
+.container {
+  min-height: calc(100vh - 80px); /* Adjust based on your navbar height */
+  width: 100%;
+  padding: 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  flex-direction: column;
+  margin-left: 0; /* Reset any margin */
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Typography */
+h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 3rem;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.mb-4 {
+  margin-bottom: 3rem;
+}
+
+.mb-3 {
+  margin-bottom: 1.5rem;
+}
+
+/* Alert Styles */
+.alert {
+  padding: 3rem;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: auto;
+  max-width: 600px;
+  backdrop-filter: blur(10px);
+}
+
+.alert-info {
+  background: rgba(255, 255, 255, 0.95);
+  color: #2c3e50;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Grid System */
+.row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  flex: 1;
+  align-content: start;
+}
+
+.col {
+  width: 100%;
+}
+
+/* Card Styles */
+.card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  border: none;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  position: relative;
+  backdrop-filter: blur(10px);
+  height: 100%;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, #ff6b6b 0%, #feca57 50%, #48dbfb 100%);
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+}
+
+.h-100 {
+  height: 100%;
+}
+
+.shadow-sm {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card-body {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.card-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #ecf0f1;
+}
+
+.card-text {
+  font-size: 1.1rem;
+  color: #5a6c7d;
+  line-height: 2;
+  margin-bottom: 2rem;
+  flex-grow: 1;
+}
+
+.card-text strong {
+  color: #2c3e50;
+  font-weight: 700;
+  display: inline-block;
+  min-width: 80px;
+}
+
+/* Button Styles */
+.btn {
+  padding: 15px 40px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.6s;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
+  color: white;
+  box-shadow: 0 6px 20px rgba(0, 184, 148, 0.4);
+}
+
+.btn-success:hover {
+  background: linear-gradient(135deg, #00a085 0%, #00b7b8 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 184, 148, 0.5);
+}
+
+.btn-success:active {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 184, 148, 0.4);
+}
+
+/* Responsive Design - Updated for navbar compatibility */
+@media (max-width: 768px) {
+  .container {
+    padding: 1.5rem;
+    min-height: calc(100vh - 60px); /* Smaller navbar on mobile */
+  }
+  
+  .row {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .card-body {
+    padding: 2rem;
+  }
+  
+  .alert {
+    padding: 2rem;
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1rem;
+    min-height: calc(100vh - 50px); /* Even smaller on very small screens */
+  }
+  
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .card-body {
+    padding: 1.5rem;
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+  }
+  
+  .btn {
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+  
+  .alert {
+    padding: 1.5rem;
+    font-size: 1.2rem;
+  }
+  
+  .row {
+    gap: 1rem;
+  }
+}
+
+/* Additional styles for better integration with existing layout */
+.container {
+  box-sizing: border-box;
+}
+
+/* Ensure the component doesn't interfere with existing navigation */
+.container * {
+  box-sizing: border-box;
+}
+
+/* If your app has a specific sidebar width, adjust this */
+@media (min-width: 992px) {
+  .container {
+    /* Adjust if you have a fixed sidebar - example: */
+    /* margin-left: 250px; */ 
+    /* width: calc(100% - 250px); */
+  }
+}
+
+/* Loading Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.card:nth-child(1) { animation-delay: 0.1s; }
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.3s; }
+.card:nth-child(4) { animation-delay: 0.4s; }
+.card:nth-child(5) { animation-delay: 0.5s; }
+.card:nth-child(6) { animation-delay: 0.6s; }
+
+/* Hover Effects */
+.card-title:hover {
+  color: #667eea;
+  transition: color 0.3s ease;
+}
+
+/* Focus States for Accessibility */
+.btn:focus {
+  outline: 3px solid rgba(0, 184, 148, 0.3);
+  outline-offset: 2px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
